@@ -1,0 +1,5 @@
+Wake Up Time is: '06:00' 
+First Nap should be at '09:00' 
+For lunch today, we have 'blue' 
+For dinner today, we have 'red' 
+As a reminder 'yes' 

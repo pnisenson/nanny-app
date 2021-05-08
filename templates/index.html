@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Nanny App</title>
+
+  <!-- Bring in our bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Nanny App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<form method="post" action="{{ url_for('main') }}">
+  <fieldset>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Wake-Up Time</label>
+    <input type="time" class="form-control" name='wakeUp' id="wakeUp" min="05:00" max="18:00">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">First Nap</label>
+    <input type="time" class="form-control" name='firstNap' id="firstNap" min="05:00" max="18:00">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Lunch</label>
+    <textarea class="form-control" name ='lunch' id="lunch" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea2">Snack/Dinner</label>
+    <textarea class="form-control" name='snack' id="snack" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea3">Reminders for the Day</label>
+    <textarea class="form-control" name='reminder' id="reminder" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</fieldset>
+</form>
+{% if results %}
+  <p><b>Thank you for your input.</b></p>
+  {% endif %}
+  {% if errors %}
+  <p> {{errors}} </p>
+  {% endif %}
+</p>
+</div>
+</body>
+</html>
