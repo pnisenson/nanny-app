@@ -10,8 +10,7 @@ app = Flask(__name__)
 # To send app link each morning when app is called
 def send_link(url):
 	import ezgmail
-	ezgmail.send(phoneNo, f'Fill form for nanny: {url}')
-	exit()
+	ezgmail.send(phoneNo,'', f'Fill form for nanny: {url}')
 
 # Create public URL for localhost:5000 so phone can access undeployed app
 def start_ngrok():
@@ -35,7 +34,7 @@ def main():
 			if os.path.exists("nannyinfo.docx"):
 				os.remove("nannyinfo.docx")
 			writeFile(request.form)
-			printFile()
+			# printFile()
 			results = 1
 			return render_template("index.html", results=results)
 		except:
@@ -44,8 +43,6 @@ def main():
 	return render_template("index.html")
 
 def writeFile(inputs):
-	print(inputs)
-	print(inputs["lunch"])
 	doc = Document()
 	doc.add_paragraph(f"This morning, Joey woke up at {inputs['wakeUp']} AM.")
 	doc.add_paragraph(f"Her first nap should be at {inputs['firstNap']} AM.")
