@@ -20,9 +20,6 @@
 
 <body>
 <div class="container-fluid">
-  {% if results %}
-  <p><b>Thank you for your input.</b></p>
-  {% endif %}
   {% if errors %}
   <p> {{errors}} </p>
   {% endif %}
@@ -34,19 +31,19 @@
   <fieldset>
   <h2 id="list-item-1">Wake Up</h2>
   <p>What time did Joey wake up? <br>
-    <input type="time" class="form-control" name='wakeUp' id="wakeUp" min="05:00" max="18:00"></p>
+    <input type="time" class="form-control" name='wakeUp' id="wakeUp" min="05:00" max="18:00"></p><hr>
   <h2 id="list-item-2">Nap Time</h2>
   <p>What time should Joey's first nap be?<br>
-    <input type="time" class="form-control" name='firstNap' id="firstNap" min="05:00" max="18:00"></p>
+    <input type="time" class="form-control" name='firstNap' id="firstNap" min="05:00" max="18:00"></p><hr>
   <h2 id="list-item-3">Lunch</h2>
   <p>What would you like Joey to eat for lunch?<br>
-    <textarea class="form-control" name ='lunch' id="lunch" rows="1"></textarea></p>
+    <textarea class="form-control" name ='lunch' id="lunch" rows="1" placeholder="e.g. Blueberries and Bamba"></textarea></p><hr>
   <h2 id="list-item-4">Dinner</h2>
   <p>What would you like Joey to eat for dinner/snack?<br>
-    <textarea class="form-control" name='snack' id="snack" rows="1"></textarea></p>
+    <textarea class="form-control" name='snack' id="snack" rows="1" placeholder="e.g. Meatballs"></textarea></p><hr>
   <h2 id="list-item-5">Other</h2>
   <p>Do you have anything else you'd like to let the nanny know, or any reminders you'd like to give? <br>
-    <textarea class="form-control" name='reminder' id="reminder" rows="3"></textarea></p>
+    <textarea class="form-control" name='reminder' id="reminder" rows="3" placeholder="e.g. Music class at 10PM @ Washington Park"></textarea></p>
     <br><br>
     <button type="submit" class="btn btn-lg btn-primary">Submit</button>
  </fieldset>
